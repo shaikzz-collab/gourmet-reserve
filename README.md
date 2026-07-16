@@ -76,6 +76,24 @@ Instead of selecting tables from a simple text list, customers see a **virtual f
 
 ---
 
+## Deployment (Production Setup)
+
+This repository is optimized for deployment on standard hosting providers:
+
+### Render Deployment (Recommended - Unified Web Service)
+1. Log in to [Render](https://render.com/) and create a new **Web Service**.
+2. Link this GitHub repository.
+3. Configure the following build settings:
+   * **Runtime**: `Node`
+   * **Build Command**: `npm run install-all && npm run build`
+   * **Start Command**: `npm start`
+4. Add the following Environment Variables in the **Environment** tab:
+   * `NODE_ENV`: `production`
+   * `JWT_SECRET`: `yoursupersecuresecretkey`
+   * `MONGODB_URI`: `mongodb+srv://<username>:<password>@cluster.mongodb.net/gourmet-reserve` (Connect your live MongoDB Atlas database)
+
+---
+
 ## Reservation & Availability Logic
 
 ### Validation Flowchart
